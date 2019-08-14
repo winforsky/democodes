@@ -35,6 +35,47 @@
 }
 */
 
+#define GENERATE_SETTER(PROPERTY, TYPE, SETTER, UPDATER) \
+- (void)SETTER:(TYPE)PROPERTY { \
+if (_##PROPERTY != PROPERTY) { \
+_##PROPERTY = PROPERTY; \
+[self UPDATER]; \
+} \
+}
+
+//@property(nonatomic, strong)UIColor* trackColor;
+//@property(nonatomic, strong)UIColor* trackHighlightColor;
+//@property(nonatomic, strong)UIColor* knobColor;
+
+//@property(nonatomic, assign)float curvaceousness;
+//@property(nonatomic, assign)float maximumValue;
+//@property(nonatomic, assign)float minimumValue;
+//@property(nonatomic, assign)float upperValue;
+//@property(nonatomic, assign)float lowerValue;
+
+#pragma mark -
+#pragma mark 外观设置-常规写法
+//常规写法，如果属性特别多时，对应的代码量也很多，可以精简
+//- (void)setTrackColor:(UIColor *)trackColor {
+//    if (_trackColor != trackColor) {
+//        _trackColor = trackColor;
+//        [_trackLayer setNeedsDisplay];
+//    }
+//}
+
+#pragma mark -
+#pragma mark 外观设置-精简写法
+GENERATE_SETTER(trackColor, UIColor*, setTrackColor, redrawLayers);
+GENERATE_SETTER(trackHighlightColor, UIColor*, setTrackHighlightColor, redrawLayers);
+GENERATE_SETTER(knobColor, UIColor*, setKnobColor, redrawLayers);
+
+GENERATE_SETTER(curvaceousness, float, setCurvaceousness, setLayerFrames);
+GENERATE_SETTER(maximumValue, float, setMaximumValue, setLayerFrames);
+GENERATE_SETTER(minimumValue, float, setMinimumValue, setLayerFrames);
+GENERATE_SETTER(upperValue, float, setUpperValue, setLayerFrames);
+GENERATE_SETTER(lowerValue, float, setLowerValue, setLayerFrames);
+
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self=[super initWithFrame:frame]) {
         
@@ -88,10 +129,22 @@
     [_lowerKnobLayer setNeedsDisplay];
 }
 
+- (void)redrawLayers {
+    [_trackLayer setNeedsDisplay];
+    [_upperKnobLayer setNeedsDisplay];
+    [_lowerKnobLayer setNeedsDisplay];
+}
+
 - (float)positionForValue:(float)value {
     return _useableTrackLength * (value - _minimumValue) / (_maximumValue - _minimumValue) + (_knobWidth * 0.5);
 }
 
+
+
+
+
+#pragma mark -
+#pragma mark 点击事件的跟踪
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     _previousTouchPoint = [touch locationInView:self];
     
