@@ -19,6 +19,7 @@
 		6740F5052303B22900F7DDE3 /* CERangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6740F5022303B22900F7DDE3 /* CERangeSlider.m */; };
 		6740F5062303B22900F7DDE3 /* CERangeSliderKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6740F5032303B22900F7DDE3 /* CERangeSliderKnobLayer.m */; };
 		6740F5092303BB3000F7DDE3 /* CERangeSliderTrackLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6740F5082303BB3000F7DDE3 /* CERangeSliderTrackLayer.m */; };
+		6740F50B2303E76400F7DDE3 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 6740F50A2303E76400F7DDE3 /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		6740F5042303B22900F7DDE3 /* CERangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CERangeSlider.h; sourceTree = "<group>"; };
 		6740F5072303BB3000F7DDE3 /* CERangeSliderTrackLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CERangeSliderTrackLayer.h; sourceTree = "<group>"; };
 		6740F5082303BB3000F7DDE3 /* CERangeSliderTrackLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CERangeSliderTrackLayer.m; sourceTree = "<group>"; };
+		6740F50A2303E76400F7DDE3 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = readme.md; path = ../readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		6740F4B92303A76F00F7DDE3 = {
 			isa = PBXGroup;
 			children = (
+				6740F50A2303E76400F7DDE3 /* readme.md */,
 				6740F4C42303A77000F7DDE3 /* CunstomControllerDemo */,
 				6740F4DD2303A77400F7DDE3 /* CunstomControllerDemoTests */,
 				6740F4E82303A77400F7DDE3 /* CunstomControllerDemoUITests */,
@@ -272,6 +275,7 @@
 			files = (
 				6740F4D22303A77400F7DDE3 /* LaunchScreen.storyboard in Resources */,
 				6740F4CF2303A77400F7DDE3 /* Assets.xcassets in Resources */,
+				6740F50B2303E76400F7DDE3 /* readme.md in Resources */,
 				6740F4CD2303A77000F7DDE3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

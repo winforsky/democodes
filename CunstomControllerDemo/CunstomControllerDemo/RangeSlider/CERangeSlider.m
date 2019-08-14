@@ -158,6 +158,8 @@ GENERATE_SETTER(lowerValue, float, setLowerValue, setLayerFrames);
     return _upperKnobLayer.highlighted || _lowerKnobLayer.highlighted;
 }
 
+#define BOUND(VALUE, UPPER, LOWER) MIN(MAX(VALUE, LOWER), UPPER)
+
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchPoint = [touch locationInView:self];
     
@@ -170,12 +172,12 @@ GENERATE_SETTER(lowerValue, float, setLowerValue, setLayerFrames);
     //2、更新数值
     if (_lowerKnobLayer.highlighted) {
         _lowerValue += valueDelta;
-        _lowerValue = [self boundFor:_lowerValue max:_upperValue min:_minimumValue];
+        _lowerValue = BOUND(_lowerValue, _upperValue, _minimumValue);//[self boundFor:_lowerValue max:_upperValue min:_minimumValue];
     }
     
     if (_upperKnobLayer.highlighted) {
         _upperValue += valueDelta;
-        _upperValue = [self boundFor:_upperValue max:_maximumValue min:_lowerValue];
+        _upperValue = BOUND(_upperValue, _maximumValue, _lowerValue);//[self boundFor:_upperValue max:_maximumValue min:_lowerValue];
     }
     
     //3、更新UI的显示状态
