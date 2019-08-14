@@ -37,6 +37,12 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self=[super initWithFrame:frame]) {
+        
+        _trackColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+        _trackHighlightColor = [UIColor colorWithRed:0.0 green:0.45 blue:0.94 alpha:1.0];
+        _knobColor = [UIColor whiteColor];
+        _curvaceousness = 1.0;
+        
         _maximumValue = 10.0f;
         _minimumValue = 0.0f;
         _upperValue = 8.0f;
@@ -44,17 +50,17 @@
         
         _trackLayer = [CERangeSliderTrackLayer layer];
         _trackLayer.slider=self;
-        _trackLayer.backgroundColor = [UIColor blueColor].CGColor;
+//        _trackLayer.backgroundColor = [UIColor blueColor].CGColor;
         [self.layer addSublayer:_trackLayer];
         
         _upperKnobLayer = [CERangeSliderKnobLayer layer];
         _upperKnobLayer.slider = self;
-        _upperKnobLayer.backgroundColor = [UIColor greenColor].CGColor;
+//        _upperKnobLayer.backgroundColor = [UIColor greenColor].CGColor;
         [self.layer addSublayer:_upperKnobLayer];
         
         _lowerKnobLayer = [CERangeSliderKnobLayer layer];
         _lowerKnobLayer.slider = self;
-        _lowerKnobLayer.backgroundColor = [UIColor greenColor].CGColor;
+//        _lowerKnobLayer.backgroundColor = [UIColor greenColor].CGColor;
         [self.layer addSublayer:_lowerKnobLayer];
         
         [self setLayerFrames];
