@@ -20,6 +20,7 @@
 		6740F5062303B22900F7DDE3 /* CERangeSliderKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6740F5032303B22900F7DDE3 /* CERangeSliderKnobLayer.m */; };
 		6740F5092303BB3000F7DDE3 /* CERangeSliderTrackLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6740F5082303BB3000F7DDE3 /* CERangeSliderTrackLayer.m */; };
 		6740F50B2303E76400F7DDE3 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 6740F50A2303E76400F7DDE3 /* readme.md */; };
+		6740F50F2303EFB600F7DDE3 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6740F50E2303EFB600F7DDE3 /* GCDTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		6740F5072303BB3000F7DDE3 /* CERangeSliderTrackLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CERangeSliderTrackLayer.h; sourceTree = "<group>"; };
 		6740F5082303BB3000F7DDE3 /* CERangeSliderTrackLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CERangeSliderTrackLayer.m; sourceTree = "<group>"; };
 		6740F50A2303E76400F7DDE3 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = readme.md; path = ../readme.md; sourceTree = "<group>"; };
+		6740F50D2303EFB600F7DDE3 /* GCDTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
+		6740F50E2303EFB600F7DDE3 /* GCDTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		6740F4C42303A77000F7DDE3 /* CunstomControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6740F50C2303EFA300F7DDE3 /* GCDTimer */,
 				6740F5002303B22900F7DDE3 /* RangeSlider */,
 				6740F4C52303A77000F7DDE3 /* AppDelegate.h */,
 				6740F4C62303A77000F7DDE3 /* AppDelegate.m */,
@@ -168,6 +172,15 @@
 				6740F5082303BB3000F7DDE3 /* CERangeSliderTrackLayer.m */,
 			);
 			path = RangeSlider;
+			sourceTree = "<group>";
+		};
+		6740F50C2303EFA300F7DDE3 /* GCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				6740F50D2303EFB600F7DDE3 /* GCDTimer.h */,
+				6740F50E2303EFB600F7DDE3 /* GCDTimer.m */,
+			);
+			path = GCDTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +318,7 @@
 				6740F4D52303A77400F7DDE3 /* main.m in Sources */,
 				6740F5092303BB3000F7DDE3 /* CERangeSliderTrackLayer.m in Sources */,
 				6740F5062303B22900F7DDE3 /* CERangeSliderKnobLayer.m in Sources */,
+				6740F50F2303EFB600F7DDE3 /* GCDTimer.m in Sources */,
 				6740F5052303B22900F7DDE3 /* CERangeSlider.m in Sources */,
 				6740F4C72303A77000F7DDE3 /* AppDelegate.m in Sources */,
 			);

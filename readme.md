@@ -8,6 +8,14 @@
 
 * [How To Make a Custom Control Tutorial: A Reusable Knob](https://www.raywenderlich.com/5294-how-to-make-a-custom-control-tutorial-a-reusable-knob)
 
+* [CREATING IOS CUSTOM VIEWS IN UIKIT](https://www.scalablepath.com/blog/creating-ios-custom-views-uikit/)
+
+* [DevelopiOSAppsSwift](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/ImplementingACustomControl.html)
+
+* [Trigonometry for Game Programming – SpriteKit and Swift Tutorial](https://www.raywenderlich.com/5504-trigonometry-for-game-programming-spritekit-and-swift-tutorial-part-1-2)
+
+里面有 角度的计算方式
+
 UIKit: Construct and manage a graphical, event-driven user interface for your iOS or tvOS app.
 
 ## 自定义控件的2种方式
@@ -81,3 +89,23 @@ The key differences between the two patterns are as follows:
 * Flexibility — you define the protocols yourself in the delegate pattern, meaning you can control exactly how much information you pass. Target-action provides no way to pass extra information and clients would have to look it up themselves after receiving the event.
 
 Your range slider control doesn’t have a large number of state changes or interactions that you need to provide notifications for. The only things that really change are the upper and lower values of the control.
+
+
+## 额外知识
+The transform property of CALayer expects to be passed a CATransform3D, not a CGAffineTransform like UIView. This means that you can perform transformations in three dimensions.
+
+CGAffineTransform uses a 3×3 matrix and CATransform3D uses a 4×4 matrix; the addition of the z-axis requires the extra values. 
+
+At their core, 3D transformations are simply matrix multiplications. You can read more about matrix multiplication in [this Wikipedia article](https://en.wikipedia.org/wiki/Matrix_multiplication).
+
+
+A UIView is backed by a CALayer, which helps iOS optimize the rendering on the GPU. CALayer objects manage visual content and are designed to be incredibly efficient for all types of animations.
+
+It’s cheap and easy to rotate layers in Core Animation. If you chose to implement this using Core Graphics and override drawRect(_:), the entire knob control would be re-rendered in every step of the animation. Since it’s a very expensive operation, it would likely result in sluggish animation.
+
+create the two shapes that make up the overall knob as CAShapeLayer objects. These are a special subclasses of CALayer that draw a bezier path using anti-aliasing and some optimized rasterization. This makes CAShapeLayer an extremely efficient way to draw arbitrary shapes.
+
+Once you create the UIBezierPath, you use the cgPath property to set the path on the appropriate CAShapeLayer.
+
+Since UIBezierPath has a more modern API, you use that to initially create the path, and then convert it to a CGPathRef.
+
