@@ -42,7 +42,25 @@ class RKProgress: UIView {
   
   //1. Create an instance of BorderLayer and store it in a constant called ‘darkBorderLayer’.
   
-  let darkBorderLayer = RKBorderLayer()
+  var darkBorderLayer: RKBorderLayer!
+  var progressLayer: RKBorderLayer!
+  
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var subtitleLabel: UILabel!
+  
+//  @IBInspectable
+  var title: String = "" {
+    didSet {
+      titleLabel.text = title;
+    }
+  }
+  
+//  @IBInspectable
+  var subtitle: String = "" {
+    didSet {
+      subtitleLabel.text = subtitle;
+    }
+  }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -68,33 +86,49 @@ class RKProgress: UIView {
   
   private func commonInit() {
     //2. Add ‘darkBorderLayer’to the view’s layer.
-    self.layer.addSublayer(self.darkBorderLayer)
+    darkBorderLayer = RKBorderLayer()
+    darkBorderLayer.lineColor = UIColor.lightGray.cgColor
+    darkBorderLayer.startAngle = 0
+    darkBorderLayer.endAngle = 2.0 * CGFloat.pi
+    
+    
+    
+    progressLayer = RKBorderLayer()
+    progressLayer.lineColor = UIColor.green.cgColor
+    progressLayer.startAngle = 0
+    progressLayer.endAngle = CGFloat.pi
+    self.layer.addSublayer(darkBorderLayer)
+    self.layer.addSublayer(progressLayer)
   }
   
   //3. This will override layoutSubviews(). This method is called when all the sizes have been resolved, the size of your view is going to be its final size. So this is the perfect time to set the size of your layer.
   override func layoutSubviews() {
     super.layoutSubviews()
     darkBorderLayer.frame=bounds
+    progressLayer.frame=bounds
     //4. Call setNeedsDisplay() to notify the system that the content of the layer needs to be redrawn.
     darkBorderLayer.setNeedsDisplay()
+    progressLayer.setNeedsDisplay()
   }
 }
 
 
 class RKBorderLayer: CALayer {
+  var lineColor: CGColor = UIColor.blue.cgColor
+  var lineWidth: CGFloat = 2.0
+  var startAngle: CGFloat = 0.0
+  var endAngle: CGFloat = 2.0 * CGFloat.pi
   
   override func draw(in ctx: CGContext) {
-    let lineWidth: CGFloat = 2.0
     let center = CGPoint(x: bounds.width*0.5, y: bounds.height*0.5)
-    
     ctx.beginPath()
     
-    ctx.setStrokeColor(UIColor.blue.cgColor)
+    ctx.setStrokeColor(lineColor)
     ctx.setLineWidth(lineWidth)
     ctx.addArc(center: center,
                radius: bounds.width * 0.5 - lineWidth,
-               startAngle: 0,
-               endAngle: 2.0 * CGFloat.pi,
+               startAngle: startAngle,
+               endAngle: endAngle,
                clockwise: false)
     
     ctx.drawPath(using: .stroke)
