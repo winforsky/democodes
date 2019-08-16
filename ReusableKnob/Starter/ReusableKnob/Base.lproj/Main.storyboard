@@ -68,13 +68,24 @@
                                     <constraint firstAttribute="height" constant="180" id="ecX-GL-QH3"/>
                                 </constraints>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zFh-xn-qIL">
+                                <rect key="frame" x="8" y="597" width="359" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="BbG-kJ-L9J"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChaged:" destination="IHY-xt-imU" eventType="valueChanged" id="f30-IA-daQ"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ard-b4-7qQ" firstAttribute="leading" secondItem="dEG-OR-M7Y" secondAttribute="leading" constant="20" id="9x6-9y-li5"/>
+                            <constraint firstItem="zFh-xn-qIL" firstAttribute="top" secondItem="dR9-es-SrZ" secondAttribute="bottom" constant="10" id="Atz-aU-2bi"/>
                             <constraint firstItem="dEG-OR-M7Y" firstAttribute="bottom" secondItem="dR9-es-SrZ" secondAttribute="bottom" constant="80" id="Axj-A4-ek1"/>
                             <constraint firstItem="dEG-OR-M7Y" firstAttribute="trailing" secondItem="jax-gM-27K" secondAttribute="trailing" constant="20" id="Baq-Xz-hkA"/>
                             <constraint firstItem="jax-gM-27K" firstAttribute="bottom" secondItem="ard-b4-7qQ" secondAttribute="bottom" id="Bzy-PJ-sVX"/>
+                            <constraint firstItem="dEG-OR-M7Y" firstAttribute="trailing" secondItem="zFh-xn-qIL" secondAttribute="trailing" constant="10" id="Cbv-1f-ZOL"/>
                             <constraint firstItem="ard-b4-7qQ" firstAttribute="top" secondItem="dEG-OR-M7Y" secondAttribute="top" constant="60" id="GUu-36-u00"/>
                             <constraint firstItem="eBG-el-QzY" firstAttribute="centerX" secondItem="6kk-Lf-3nU" secondAttribute="centerX" id="JI9-PW-DbU"/>
                             <constraint firstItem="Lhx-AO-0RM" firstAttribute="top" secondItem="ard-b4-7qQ" secondAttribute="bottom" constant="8" id="OD7-z5-YkX"/>
@@ -88,12 +99,14 @@
                             <constraint firstItem="N4k-1S-OOt" firstAttribute="centerY" secondItem="6kk-Lf-3nU" secondAttribute="centerY" id="jWU-gx-bGJ"/>
                             <constraint firstItem="dEG-OR-M7Y" firstAttribute="trailing" secondItem="N4k-1S-OOt" secondAttribute="trailing" priority="999" constant="138" id="n8T-4c-ddW"/>
                             <constraint firstItem="Lhx-AO-0RM" firstAttribute="leading" secondItem="ard-b4-7qQ" secondAttribute="leading" id="uhZ-nT-hph"/>
+                            <constraint firstItem="zFh-xn-qIL" firstAttribute="leading" secondItem="dEG-OR-M7Y" secondAttribute="leading" constant="10" id="wbE-0w-hD8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dEG-OR-M7Y"/>
                     </view>
                     <connections>
                         <outlet property="animateSwitch" destination="6kk-Lf-3nU" id="3ak-gs-iBK"/>
                         <outlet property="knob" destination="ard-b4-7qQ" id="Gej-5x-hqx"/>
+                        <outlet property="progressView" destination="dR9-es-SrZ" id="2Dl-R3-AwQ"/>
                         <outlet property="valueLabel" destination="jax-gM-27K" id="pJF-tj-o0g"/>
                         <outlet property="valueSlider" destination="Lhx-AO-0RM" id="2R6-rt-0TZ"/>
                     </connections>

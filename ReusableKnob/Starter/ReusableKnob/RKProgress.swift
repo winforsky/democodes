@@ -28,6 +28,8 @@
 
 import UIKit
 
+//参考原文来自：https://www.scalablepath.com/blog/creating-ios-custom-views-uikit/
+
 @IBDesignable
 class RKProgress: UIView {
 
@@ -62,6 +64,14 @@ class RKProgress: UIView {
     }
   }
   
+  //  @IBInspectable
+  var progress: CGFloat = 0.0 {
+    didSet {
+      progressLayer.endAngle = RKProgress.radianForValue(progress);
+      progressLayer.setNeedsDisplay()
+    }
+  }
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     loadViewFromNib()
@@ -88,15 +98,15 @@ class RKProgress: UIView {
     //2. Add ‘darkBorderLayer’to the view’s layer.
     darkBorderLayer = RKBorderLayer()
     darkBorderLayer.lineColor = UIColor.lightGray.cgColor
-    darkBorderLayer.startAngle = 0
-    darkBorderLayer.endAngle = 2.0 * CGFloat.pi
+    darkBorderLayer.startAngle = RKProgress.startAngle //0
+    darkBorderLayer.endAngle = RKProgress.endAngle //2.0 * CGFloat.pi
     
     
     
     progressLayer = RKBorderLayer()
     progressLayer.lineColor = UIColor.green.cgColor
-    progressLayer.startAngle = 0
-    progressLayer.endAngle = CGFloat.pi
+    progressLayer.startAngle = RKProgress.startAngle //0
+    progressLayer.endAngle = RKProgress.endAngle //CGFloat.pi
     self.layer.addSublayer(darkBorderLayer)
     self.layer.addSublayer(progressLayer)
   }
@@ -109,6 +119,26 @@ class RKProgress: UIView {
     //4. Call setNeedsDisplay() to notify the system that the content of the layer needs to be redrawn.
     darkBorderLayer.setNeedsDisplay()
     progressLayer.setNeedsDisplay()
+  }
+  
+  
+  static let startAngle = 3/2 * CGFloat.pi
+  
+  static let endAngle = 7/2 * CGFloat.pi
+  
+  internal class func radianForValue(_ value: CGFloat) -> CGFloat {
+    let realValue = RKProgress.sanitizeValue(value)
+    return (realValue * 4/2 * CGFloat.pi / 100) + RKProgress.startAngle
+  }
+  
+  internal class func sanitizeValue(_ value: CGFloat) -> CGFloat {
+    var realValue = value
+    if value < 0 {
+      realValue = 0
+    } else if value > 100 {
+      realValue = 100
+    }
+    return realValue
   }
 }
 
@@ -134,3 +164,5 @@ class RKBorderLayer: CALayer {
     ctx.drawPath(using: .stroke)
   }
 }
+
+

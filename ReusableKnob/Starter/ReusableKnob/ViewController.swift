@@ -34,7 +34,10 @@ class ViewController: UIViewController {
   @IBOutlet var valueSlider: UISlider!
   @IBOutlet var animateSwitch: UISwitch!
   @IBOutlet weak var knob: RKKnob!
-    
+  
+  
+ 
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -64,5 +67,10 @@ class ViewController: UIViewController {
   
   func updateLabel() {
     valueLabel.text = String(format: "%.2f", knob.value)
+  }
+  
+  @IBOutlet weak var progressView: RKProgress!
+  @IBAction func sliderValueChaged(_ sender: UISlider) {
+    progressView.progress = CGFloat(sender.value)
   }
 }
