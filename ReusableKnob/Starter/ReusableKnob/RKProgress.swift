@@ -51,21 +51,21 @@ class RKProgress: UIView {
   @IBOutlet weak var subtitleLabel: UILabel!
   
 //  @IBInspectable
-  var title: String = "" {
+  @IBInspectable var title: String = "" {
     didSet {
       titleLabel.text = title;
     }
   }
   
 //  @IBInspectable
-  var subtitle: String = "" {
+  @IBInspectable var subtitle: String = "" {
     didSet {
       subtitleLabel.text = subtitle;
     }
   }
   
   //  @IBInspectable
-  var progress: CGFloat = 0.0 {
+  @IBInspectable var progress: CGFloat = 0.0 {
     didSet {
       progressLayer.endAngle = RKProgress.radianForValue(progress);
       progressLayer.setNeedsDisplay()

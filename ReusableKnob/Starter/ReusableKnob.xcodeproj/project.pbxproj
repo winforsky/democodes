@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		672BFFEE2305764A00C58B66 /* RKProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672BFFED2305764A00C58B66 /* RKProgress.swift */; };
+		672BFFF02305768100C58B66 /* RKProgress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 672BFFEF2305768100C58B66 /* RKProgress.xib */; };
 		6740F5112304177300F7DDE3 /* RKKnob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6740F5102304177300F7DDE3 /* RKKnob.swift */; };
 		9A0ECEAE2073DBF900347595 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ECEA82073DBF900347595 /* AppDelegate.swift */; };
 		9A0ECEAF2073DBF900347595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0ECEA92073DBF900347595 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		672BFFED2305764A00C58B66 /* RKProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RKProgress.swift; sourceTree = "<group>"; };
+		672BFFEF2305768100C58B66 /* RKProgress.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RKProgress.xib; sourceTree = "<group>"; };
 		6740F5102304177300F7DDE3 /* RKKnob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RKKnob.swift; path = RKKnob/RKKnob.swift; sourceTree = "<group>"; };
 		9A0ECEA82073DBF900347595 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A0ECEA92073DBF900347595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 				9A0ECEAA2073DBF900347595 /* Main.storyboard */,
 				9A7E75282074BFC40079BA5F /* ViewController.swift */,
 				6740F5102304177300F7DDE3 /* RKKnob.swift */,
+				672BFFED2305764A00C58B66 /* RKProgress.swift */,
+				672BFFEF2305768100C58B66 /* RKProgress.xib */,
 			);
 			path = ReusableKnob;
 			sourceTree = "<group>";
@@ -129,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0ECEAF2073DBF900347595 /* Assets.xcassets in Resources */,
+				672BFFF02305768100C58B66 /* RKProgress.xib in Resources */,
 				9A0ECEB22073DBF900347595 /* LaunchScreen.storyboard in Resources */,
 				9A0ECEB02073DBF900347595 /* Main.storyboard in Resources */,
 			);
@@ -142,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A7E75292074BFC40079BA5F /* ViewController.swift in Sources */,
+				672BFFEE2305764A00C58B66 /* RKProgress.swift in Sources */,
 				6740F5112304177300F7DDE3 /* RKKnob.swift in Sources */,
 				9A0ECEAE2073DBF900347595 /* AppDelegate.swift in Sources */,
 			);

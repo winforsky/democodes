@@ -67,6 +67,13 @@
                                     <constraint firstAttribute="width" constant="180" id="UBP-Yt-tTd"/>
                                     <constraint firstAttribute="height" constant="180" id="ecX-GL-QH3"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="xcsf"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="sddssd"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zFh-xn-qIL">
                                 <rect key="frame" x="8" y="597" width="359" height="30"/>
