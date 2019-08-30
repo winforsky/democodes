@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VVStack : NSObject
 
+- (void)push:(double)num;
+- (double)top;
+- (double)pop;
+
 @end
 
 NS_ASSUME_NONNULL_END

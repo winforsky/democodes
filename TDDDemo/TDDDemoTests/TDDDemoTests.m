@@ -45,4 +45,20 @@
     XCTAssertNotNil(stack, "VVStack object should be created.");
 }
 
+- (void)testStackPushAndGet {
+    VVStack *stack = [VVStack new];
+    double inNumber = 2.5;
+    [stack push:inNumber];
+    double topNumber = [stack top];
+    XCTAssertEqual(topNumber, inNumber, "VVStack should can be pushed and has that top value");
+    
+    inNumber = 4.5;
+    [stack push:inNumber];
+    topNumber = [stack top];
+    XCTAssertEqual(topNumber, inNumber, "The top value should be the last pushed value in VVStack");
+    
+    double popNumber=[stack pop];
+    XCTAssertEqual(popNumber, inNumber, "The pop value should be the last pushed value in VVStack");
+}
+
 @end
