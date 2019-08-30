@@ -32,6 +32,9 @@
 }
 
 - (double)pop {
+    if (self.numbers.count == 0) {
+        [NSException raise:@"VVStackPopEmptyException" format:@"No element can be poped in stack"];
+    }
     double top=[self top];
     [self.numbers removeLastObject];
     return top;
@@ -55,3 +58,10 @@
 //        });
 //    });
 //});
+
+//Given a team, when newly created, it should have a name, and should have 11 players
+//行为描述（Specs）和期望（Expectations），Kiwi测试的基本结构
+
+//传统测试的文件名一般以Tests为后缀，表示这个文件中含有一组测试，
+//而在Kiwi中，一个测试文件所包含的是一组对于行为的描述（Spec），
+//因此习惯上使用需要测试的目标类来作为名字，并以Spec作为文件名后缀。

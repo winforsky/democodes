@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VVStack : NSObject
 
+@property(nonatomic, assign)NSInteger count;
+
 - (void)push:(double)num;
 - (double)top;
 - (double)pop;
