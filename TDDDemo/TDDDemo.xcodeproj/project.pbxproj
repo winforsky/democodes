@@ -15,6 +15,7 @@
 		67A7E7B6231905970062299E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E7B5231905970062299E /* main.m */; };
 		67A7E7C0231905970062299E /* TDDDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E7BF231905970062299E /* TDDDemoTests.m */; };
 		67A7E7CB231905970062299E /* TDDDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E7CA231905970062299E /* TDDDemoUITests.m */; };
+		67A7E7DB231908760062299E /* VVStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E7DA231908760062299E /* VVStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		67A7E7C6231905970062299E /* TDDDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A7E7CA231905970062299E /* TDDDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDDDemoUITests.m; sourceTree = "<group>"; };
 		67A7E7CC231905970062299E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67A7E7D9231908760062299E /* VVStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVStack.h; sourceTree = "<group>"; };
+		67A7E7DA231908760062299E /* VVStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		67A7E7A5231905930062299E /* TDDDemo */ = {
 			isa = PBXGroup;
 			children = (
+				67A7E7D8231908690062299E /* Model */,
 				67A7E7A6231905930062299E /* AppDelegate.h */,
 				67A7E7A7231905930062299E /* AppDelegate.m */,
 				67A7E7A9231905930062299E /* ViewController.h */,
@@ -130,6 +134,15 @@
 				67A7E7CC231905970062299E /* Info.plist */,
 			);
 			path = TDDDemoUITests;
+			sourceTree = "<group>";
+		};
+		67A7E7D8231908690062299E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67A7E7D9231908760062299E /* VVStack.h */,
+				67A7E7DA231908760062299E /* VVStack.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +277,7 @@
 			files = (
 				67A7E7AB231905930062299E /* ViewController.m in Sources */,
 				67A7E7B6231905970062299E /* main.m in Sources */,
+				67A7E7DB231908760062299E /* VVStack.m in Sources */,
 				67A7E7A8231905930062299E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

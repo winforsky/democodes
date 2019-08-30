@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "VVStack.h"
+
 @interface TDDDemoTests : XCTestCase
 
 @end
@@ -32,6 +34,15 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testStackExist {
+    XCTAssertNotNil([VVStack class], "VVStack class should exist.");
+}
+
+- (void)testStackCanBeCreated {
+    VVStack *stack = [VVStack new];
+    XCTAssertNotNil(stack, "VVStack object should be created.");
 }
 
 @end
