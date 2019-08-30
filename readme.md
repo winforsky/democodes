@@ -109,3 +109,6 @@ Once you create the UIBezierPath, you use the cgPath property to set the path on
 
 Since UIBezierPath has a more modern API, you use that to initially create the path, and then convert it to a CGPathRef.
 
+
+Don’t use updateConstraints() for the initial setup of your view. Use it for best performance when you need to add, modify, or delete lots of constraints within a single layout pass. If performance is not a problem, updating your constraints directly in place is often easier.
+
